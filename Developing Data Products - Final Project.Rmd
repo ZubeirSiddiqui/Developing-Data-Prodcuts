@@ -1,0 +1,38 @@
+---
+title: "Developing Data Products - Final Assignment"
+author: "Zubeir Siddiqui"
+date: "July 18, 2017"
+output: ioslides_presentation
+widescreen: true
+smaller: true
+transition-speed: slow
+logo: logo.png
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Project Background
+<div class="gray2">
+Project utilizes faithful geyser eruption data set available in R to build a linear model of the eruption duration vs. waiting time. The Shiny application (user interface) allows to input the eruption waiting time in minute and the outputs predicted duration of the eruption following the wait. The links to the GitHub repo, RStudio Presentation, and a Shiny application are provided in last slide for reference and review.
+</div>
+---
+---
+## Wait Time vs. Eruption Duration
+<div class="gray2">
+Faithful Geyser data set available in R, consists of two dimensions related to Old Faithful Geyser: waiting time and eruptions. waiting dimension signifies the waiting time between eruptions, while eruption dimension signifies the length of the eruptions.
+
+There is clear linear relationship between the waiting time and the duration of the eruption itself as shown in plot on next slide.
+</div>
+```{r message=FALSE, warning=FALSE}
+fit <- lm(waiting~eruptions, data=faithful)
+plot(faithful, main="Wait Time vs. Eruption Duration", xlab="Wait Time(minutes)", ylab="Eruption Duration(seconds)")
+lines(faithful$eruptions, fitted(fit), col="red")
+```
+---
+## Links
+<div class="gray2">
+To run the Shiny application, click on the link to the Shiny application provided below. The Shiny application will open in the browser window presenting short write up and a slider. By moving the slider, new predictions are displayed just below the write up on the app window as the slider is moved.
+</div>
+- GitHub repo: [Developing Data Products - Project Files ](https://github.com/ZubeirSiddiqui/Developing-Data-Prodcuts)
+- Shiny Application: [Developing Data Products - Shiny Application](https://zubeir321.shinyapps.io/developing_data_products_-_shiny_apps/)
+- This Presentation: [Developing Data Products - Final Presentation ](http://rpubs.com/zubeir321/292277)
